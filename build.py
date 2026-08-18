@@ -95,6 +95,8 @@ def bord_uit_paragrafen(body):
     blokken = re.split(r"\n\s*\n", body)
     uit, buffer = [], []
 
+    staart = []
+
     def leeg():
         if not buffer:
             return
@@ -105,11 +107,16 @@ def bord_uit_paragrafen(body):
                 rijen.append(rij(nummer, *ontleed, leider=nummer == "1"))
         uit.append('<ol class="board">' + "".join(rijen) + "</ol>" if rijen else "")
         buffer.clear()
+        # markup die aan de laatste alinea vastzat (zoals een sluitende div)
+        while staart:
+            uit.append(staart.pop(0))
 
     for blok in blokken:
-        m = re.match(r"(?s)^<p>\s*(\d+)\s*[.:)]\s*(.*)</p>$", blok.strip())
+        m = re.match(r"(?s)^<p>\s*(\d+)\s*[.:)]\s*(.*?)</p>(.*)$", blok.strip())
         if m and deelnemer(m.group(2)):
             buffer.append((m.group(1), m.group(2)))
+            if m.group(3).strip():
+                staart.append(m.group(3).strip())
         else:
             leeg()
             uit.append(blok)
