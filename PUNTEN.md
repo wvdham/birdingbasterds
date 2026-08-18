@@ -45,22 +45,42 @@ in plaats van opgezocht. Bron van de tabellen: `bron/bbpunten_wout.xlsx`
 | 0,8 - 0,9 | -15 |
 | 0,9 - 1,0 | -20 |
 
-## Openstaande vragen (nog niet met Wouter afgestemd)
+## Vastgesteld op de proef
+
+De methode is getoetst aan punten die al in de scorelijst staan. Twee dingen
+liggen daarmee vast:
+
+- **Tellen tot en met vorig jaar.** De gevallen van het lopende jaar tellen
+  niet mee voor de puntenwaarde van dat jaar.
+- **"Na 2000" is inclusief 2000**, en een factor die precies op een grens valt
+  hoort bij de hogere band (0,800 valt in 0,8 - 0,9).
+
+| Soort | Claimjaar | Gevallen | Factor | Basis | Correctie | Uitkomst | In de lijst |
+|---|---|---|---|---|---|---|---|
+| Brilzee-eend | 2026 | 35 | 0,800 | 40 | -15 | 25 | 25 |
+| Zwartkopgors | 2025 | 23 | 0,652 | 50 | -5 | 45 | 45 |
+| Zwartkopgors | 2024 | 23 | 0,652 | 50 | -5 | 45 | 46 |
+| Koningseider | 2024 | 19 | 0,632 | 70 | -5 | 65 | 50 |
+
+De twee onderste wijken af. Bij de Zwartkopgors gaat het om één punt, wat past
+bij de speelruimte die de spelregels zelf noemen. Bij de Koningseider is het
+verschil groot; 50 punten is precies de basiswaarde bij twintig gevallen
+zonder correctie, terwijl de teller op negentien stond.
+
+## Rekenhulp
+
+`python3 tools/punten.py [peiljaar] <soort>` doet de telling en de berekening.
+Zonder peiljaar telt hij tot en met vorig jaar. De soort mag als slug of als
+Nederlandse naam worden opgegeven; bij een naam zoekt het script de slug op in
+de soortenlijst.
+
+## Openstaande vragen
 
 1. Geldt de oude regel nog dat de correctie alleen wordt toegepast op soorten
    met meer dan vijf gevallen? Die stond wel in de spelregels van 2023, niet
    in het werkblad van 2025.
 2. Wat krijgt een geval dat tussen twee regels van de basistabel valt, zoals
    het derde geval: de waarde van de vorige regel, of iets ertussenin?
-3. Op welk moment wordt het aantal gevallen geteld: bij de claim, of aan het
-   eind van het seizoen? Dat maakt verschil zodra er in hetzelfde jaar een
-   influx is.
-
-## Proefberekening die niet uitkomt
-
-Brilzee-eend, augustus 2026, geteld op de soortpagina van dutchavifauna:
-54 gevallen, waarvan 43 na 2000, dus factor 0,80. Dat geeft 25 basispunten
-(vanaf het 50e geval) met een correctie van -10, samen 15, en dus 16 punten
-door de ondergrens. In de scorelijst van 2026 staat de Brilzee-eend echter
-voor 25 punten. Er zit dus een stap tussen die hier nog niet klopt; zie de
-openstaande vragen hierboven.
+   In de proef hierboven is de vorige regel aangehouden.
+3. Tellen gevallen die nog in roulatie zijn mee zodra vaststaat dat ze
+   aanvaard worden? Dat zou het verschil bij de Koningseider verklaren.
