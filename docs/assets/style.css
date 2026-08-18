@@ -1,0 +1,95 @@
+:root{
+  --ink:#1d2321;
+  --ink-soft:#55605b;
+  --paper:#faf8f3;
+  --card:#fffdf9;
+  --line:#e2ded2;
+  --accent:#3f6b4a;
+  --accent-soft:#eaf0e9;
+  --highlight:#8a5a1e;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font:400 17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-text-size-adjust:100%;
+}
+
+/* header */
+.site{
+  background:var(--accent);
+  color:#fff;
+  padding:18px 20px 0;
+}
+.brand{display:block;text-decoration:none;color:#fff}
+.brand__name{display:block;font-size:26px;font-weight:700;letter-spacing:.01em}
+.brand__motto{display:block;font-size:14px;opacity:.82;font-style:italic;margin-top:2px}
+.nav{
+  display:flex;flex-wrap:wrap;gap:2px;margin-top:16px;
+}
+.nav a{
+  color:#fff;text-decoration:none;font-size:15px;
+  padding:9px 14px;border-radius:6px 6px 0 0;opacity:.85;
+}
+.nav a:hover{opacity:1;background:rgba(255,255,255,.12)}
+.nav a[aria-current="page"]{background:var(--paper);color:var(--accent);opacity:1;font-weight:600}
+
+/* body */
+.wrap{max-width:44rem;margin:0 auto;padding:34px 20px 60px}
+h1{font-size:29px;line-height:1.25;margin:0 0 22px}
+h2{
+  font-size:21px;margin:38px 0 14px;padding-bottom:6px;
+  border-bottom:2px solid var(--accent-soft);scroll-margin-top:12px;
+}
+p{margin:0 0 14px}
+a{color:var(--accent)}
+strong{color:var(--highlight)}
+ol,ul{padding-left:1.4em;margin:0 0 18px}
+li{margin-bottom:12px}
+li::marker{color:var(--ink-soft);font-variant-numeric:tabular-nums}
+
+/* soortenlijst: twee kolommen, scheelt de helft aan scrollen */
+body[data-page="all-time-ontdeklijst"] ol{columns:2;column-gap:2.2rem}
+body[data-page="all-time-ontdeklijst"] li{break-inside:avoid;margin-bottom:7px}
+@media (max-width:620px){
+  body[data-page="all-time-ontdeklijst"] ol{columns:1}
+}
+
+/* jaarnavigatie */
+.years{
+  display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;
+  margin:0 0 28px;
+}
+.years li{margin:0}
+.years a{
+  display:inline-block;text-decoration:none;font-size:15px;font-weight:600;
+  padding:5px 11px;border:1px solid var(--line);border-radius:999px;
+  background:var(--card);
+}
+.years a:hover{border-color:var(--accent);background:var(--accent-soft)}
+
+/* tabel puntenlijst */
+.tablewrap{overflow-x:auto;margin:0 0 20px}
+table{border-collapse:collapse;width:100%;font-size:15.5px;background:var(--card)}
+td,th{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+thead th{background:var(--accent-soft);font-weight:600;position:sticky;top:0}
+td:nth-child(2){text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;width:5.5em}
+td:nth-child(3){color:var(--ink-soft);font-size:14.5px}
+
+/* footer */
+.site-footer{
+  border-top:1px solid var(--line);
+  padding:22px 20px 40px;text-align:center;
+  color:var(--ink-soft);font-size:14px;
+}
+.site-footer p{margin:0}
+
+@media (max-width:600px){
+  body{font-size:16.5px}
+  h1{font-size:25px}
+  .brand__name{font-size:22px}
+  .nav a{padding:8px 11px;font-size:14.5px}
+}
