@@ -16,7 +16,7 @@ import sys
 import urllib.error
 import urllib.request
 
-BASIS = [(1, 100), (2, 90), (5, 80), (10, 70), (20, 50), (30, 40), (50, 25), (60, 20)]
+BASIS = [(1, 100), (2, 90), (5, 80), (10, 70), (20, 50), (30, 40), (50, 25), (60, 20), (61, 16)]
 CORRECTIE = [(0.10, 25), (0.15, 20), (0.20, 15), (0.30, 10), (0.40, 5),
              (0.60, 0), (0.70, -5), (0.80, -10), (0.90, -15), (1.01, -20)]
 MAX_OMHOOG, MIN_OMLAAG = 85, 16
@@ -96,8 +96,8 @@ if __name__ == "__main__":
     if argumenten and re.fullmatch(r"\d{4}", argumenten[0]):
         peiljaar = int(argumenten.pop(0))
     for naam in argumenten:
-        slug = naam if "/" not in naam else naam.rsplit("/", 1)[-1]
-        u = bereken(slug, peiljaar)
+        slug = naam.rsplit("/", 1)[-1]
+        u = None if " " in slug else bereken(slug, peiljaar)
         if u is None:
             gevonden = zoek_slug(naam)
             if gevonden:
