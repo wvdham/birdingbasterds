@@ -38,6 +38,9 @@ def frontmatter(tekst):
 
 def opschonen(body):
     """WordPress-blokopmaak omzetten naar schone HTML."""
+    # het navigatieblok dat WordPress in de paginainhoud meelevert: die links
+    # wijzen terug naar wordpress.com en de site heeft zijn eigen navigatie
+    body = re.sub(r"(?s)<nav[^>]*>.*?</nav>", "", body)
     # lege paragrafen en de lege ankers die Gutenberg achterlaat
     body = re.sub(r'<p[^>]*>\s*(?:<a></a>)?\s*</p>', "", body)
     body = body.replace("<a></a>", "")
