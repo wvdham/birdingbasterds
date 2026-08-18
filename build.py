@@ -14,6 +14,7 @@ DOCS = ROOT / "docs"
 PAGINAS = [
     ("index", "Scorelijst"),
     ("scorelijst-archief", "Scorelijst 2023 en ouder"),
+    ("spelregels", "Spelregels"),
     ("puntenlijst", "Puntenlijst"),
     ("all-time-ontdeklijst", "All-Time Ontdeklijst"),
     ("cana", "CANA"),

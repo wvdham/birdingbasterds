@@ -44,7 +44,13 @@ h2{
   font-size:21px;margin:38px 0 14px;padding-bottom:6px;
   border-bottom:2px solid var(--accent-soft);scroll-margin-top:12px;
 }
+h3{font-size:17.5px;margin:26px 0 8px}
 p{margin:0 0 14px}
+ul.punten{list-style:none;padding:0}
+ul.punten li{
+  padding:7px 12px;margin-bottom:5px;background:var(--card);
+  border-left:3px solid var(--accent-soft);border-radius:0 4px 4px 0;
+}
 a{color:var(--accent)}
 strong{color:var(--highlight)}
 ol,ul{padding-left:1.4em;margin:0 0 18px}
@@ -76,8 +82,10 @@ body[data-page="all-time-ontdeklijst"] li{break-inside:avoid;margin-bottom:7px}
 table{border-collapse:collapse;width:100%;font-size:15.5px;background:var(--card)}
 td,th{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
 thead th{background:var(--accent-soft);font-weight:600;position:sticky;top:0}
-td:nth-child(2){text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;width:5.5em}
-td:nth-child(3){color:var(--ink-soft);font-size:14.5px}
+body[data-page="puntenlijst"] td:nth-child(2){text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;width:5.5em}
+body[data-page="puntenlijst"] td:nth-child(3){color:var(--ink-soft);font-size:14.5px}
+body[data-page="cana"] td:nth-child(3){font-weight:600;white-space:nowrap}
+body[data-page="cana"] table{font-size:15px}
 
 /* footer */
 .site-footer{
