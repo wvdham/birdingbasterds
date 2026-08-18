@@ -33,7 +33,7 @@ def kaal(tekst):
 
 def deelnemer(blok):
     """Geeft (naam, totaal, soortenreeks) terug, of None als het geen stand-regel is."""
-    s = re.sub(r"^\s*\d+\.\s*", "", blok.strip())
+    s = re.sub(r"^\s*\d+\s*[.:)]\s*", "", blok.strip())
     for patroon in (NA_DP, VOOR_DP):
         m = patroon.search(s)
         if not m:
@@ -107,7 +107,7 @@ def bord_uit_paragrafen(body):
         buffer.clear()
 
     for blok in blokken:
-        m = re.match(r"(?s)^<p>\s*(\d+)\.\s*(.*)</p>$", blok.strip())
+        m = re.match(r"(?s)^<p>\s*(\d+)\s*[.:)]\s*(.*)</p>$", blok.strip())
         if m and deelnemer(m.group(2)):
             buffer.append((m.group(1), m.group(2)))
         else:
