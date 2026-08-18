@@ -1,103 +1,246 @@
+/* Birding Basterds - scorebord */
+
 :root{
-  --ink:#1d2321;
-  --ink-soft:#55605b;
-  --paper:#faf8f3;
-  --card:#fffdf9;
-  --line:#e2ded2;
-  --accent:#3f6b4a;
-  --accent-soft:#eaf0e9;
-  --highlight:#8a5a1e;
+  --bg:#0E0D0C;
+  --row:#16151300;
+  --slab:#161513;
+  --slab-2:#1B1A17;
+  --line:#2A2723;
+  --text:#EBE6DB;
+  --dim:#A29A8E;
+  --dimmer:#8B8479;
+  --amber:#F2A93C;
+  --amber-soft:#F8CE85;
+  --amber-deep:#7E5A1B;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
+
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;background:var(--bg)}
 body{
   margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font:400 17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  font:400 16px/1.6 var(--sans);
   -webkit-text-size-adjust:100%;
+  -webkit-font-smoothing:antialiased;
 }
 
-/* header */
+/* ------------------------------------------------------------ kop */
+
 .site{
-  background:var(--accent);
-  color:#fff;
-  padding:18px 20px 0;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,#131210 0%,var(--bg) 100%);
 }
-.brand{display:block;text-decoration:none;color:#fff}
-.brand__name{display:block;font-size:26px;font-weight:700;letter-spacing:.01em}
-.brand__motto{display:block;font-size:14px;opacity:.82;font-style:italic;margin-top:2px}
-.nav{
-  display:flex;flex-wrap:wrap;gap:2px;margin-top:16px;
+.site__inner{max-width:56rem;margin:0 auto;padding:30px 22px 0}
+.brand{display:block;text-decoration:none;color:inherit}
+.brand__name{
+  display:block;
+  font:700 clamp(26px,5.2vw,40px)/1 var(--sans);
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--text);
 }
+.brand__motto{
+  display:block;margin-top:12px;
+  font:500 11.5px/1 var(--mono);
+  letter-spacing:.26em;text-transform:uppercase;
+  color:var(--amber);
+}
+.nav{display:flex;flex-wrap:wrap;gap:0 22px;margin-top:26px}
 .nav a{
-  color:#fff;text-decoration:none;font-size:15px;
-  padding:9px 14px;border-radius:6px 6px 0 0;opacity:.85;
+  position:relative;
+  padding:0 0 12px;
+  font:500 12px/1 var(--mono);
+  letter-spacing:.13em;text-transform:uppercase;
+  color:var(--dim);text-decoration:none;
+  border-bottom:2px solid transparent;
+  transition:color .15s ease;
 }
-.nav a:hover{opacity:1;background:rgba(255,255,255,.12)}
-.nav a[aria-current="page"]{background:var(--paper);color:var(--accent);opacity:1;font-weight:600}
+.nav a:hover{color:var(--text)}
+.nav a[aria-current="page"]{color:var(--amber);border-bottom-color:var(--amber)}
 
-/* body */
-.wrap{max-width:44rem;margin:0 auto;padding:34px 20px 60px}
-h1{font-size:29px;line-height:1.25;margin:0 0 22px}
+/* ------------------------------------------------------------ romp */
+
+.wrap{max-width:56rem;margin:0 auto;padding:44px 22px 72px}
+h1{
+  margin:0 0 26px;
+  font:700 clamp(24px,4vw,32px)/1.15 var(--sans);
+  letter-spacing:.01em;
+}
+body[data-page="index"] .wrap > .years{margin-top:0}
+body[data-page="index"] h2:first-of-type{margin-top:34px}
 h2{
-  font-size:21px;margin:38px 0 14px;padding-bottom:6px;
-  border-bottom:2px solid var(--accent-soft);scroll-margin-top:12px;
+  margin:52px 0 18px;
+  font:500 13px/1 var(--mono);
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--amber);
+  padding-bottom:12px;border-bottom:1px solid var(--line);
+  scroll-margin-top:16px;
 }
-h3{font-size:17.5px;margin:26px 0 8px}
-p{margin:0 0 14px}
-ul.punten{list-style:none;padding:0}
-ul.punten li{
-  padding:7px 12px;margin-bottom:5px;background:var(--card);
-  border-left:3px solid var(--accent-soft);border-radius:0 4px 4px 0;
+h3{margin:30px 0 10px;font-size:17px;font-weight:650;letter-spacing:.01em}
+p{margin:0 0 15px;max-width:62ch}
+a{color:var(--amber-soft)}
+main strong{color:var(--amber);font-weight:600}
+.update{
+  margin:-6px 0 22px;
+  font:500 11.5px/1 var(--mono);letter-spacing:.1em;
+  color:var(--dimmer);text-transform:uppercase;
 }
-a{color:var(--accent)}
-strong{color:var(--highlight)}
-ol,ul{padding-left:1.4em;margin:0 0 18px}
-li{margin-bottom:12px}
-li::marker{color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.update span::after{content:" ·";color:var(--amber-deep)}
 
-/* soortenlijst: twee kolommen, scheelt de helft aan scrollen */
-body[data-page="all-time-ontdeklijst"] ol{columns:2;column-gap:2.2rem}
-body[data-page="all-time-ontdeklijst"] li{break-inside:avoid;margin-bottom:7px}
-@media (max-width:620px){
-  body[data-page="all-time-ontdeklijst"] ol{columns:1}
-}
+/* ------------------------------------------------------------ jaren */
 
-/* jaarnavigatie */
-.years{
-  display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;
-  margin:0 0 28px;
-}
+.years{display:flex;flex-wrap:wrap;gap:7px;list-style:none;padding:0;margin:0 0 8px}
 .years li{margin:0}
 .years a{
-  display:inline-block;text-decoration:none;font-size:15px;font-weight:600;
-  padding:5px 11px;border:1px solid var(--line);border-radius:999px;
-  background:var(--card);
+  display:block;
+  padding:7px 13px;
+  font:500 12.5px/1 var(--mono);letter-spacing:.08em;
+  color:var(--dim);text-decoration:none;
+  border:1px solid var(--line);border-radius:2px;
+  background:var(--slab);
+  transition:color .15s ease,border-color .15s ease;
 }
-.years a:hover{border-color:var(--accent);background:var(--accent-soft)}
+.years a:hover{color:var(--amber);border-color:var(--amber-deep)}
 
-/* tabel puntenlijst */
-.tablewrap{overflow-x:auto;margin:0 0 20px}
-table{border-collapse:collapse;width:100%;font-size:15.5px;background:var(--card)}
-td,th{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
-thead th{background:var(--accent-soft);font-weight:600;position:sticky;top:0}
-body[data-page="puntenlijst"] td:nth-child(2){text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;width:5.5em}
-body[data-page="puntenlijst"] td:nth-child(3){color:var(--ink-soft);font-size:14.5px}
-body[data-page="cana"] td:nth-child(3){font-weight:600;white-space:nowrap}
-body[data-page="cana"] table{font-size:15px}
+/* ------------------------------------------------------------ scorebord */
 
-/* footer */
+.board{list-style:none;margin:0 0 34px;padding:0}
+.row{
+  display:grid;
+  grid-template-columns:2.9rem minmax(0,1fr) auto;
+  grid-template-areas:"pos name score" "pos finds finds";
+  align-items:baseline;
+  gap:0 14px;
+  padding:15px 18px 15px 6px;
+  border-bottom:1px solid var(--line);
+  border-left:2px solid transparent;
+  background:linear-gradient(90deg,var(--slab) 0%,transparent 78%);
+}
+.row:first-child{border-top:1px solid var(--line)}
+.row__pos{
+  grid-area:pos;justify-self:end;
+  font:500 13px/1.5 var(--mono);
+  color:var(--dimmer);
+  font-variant-numeric:tabular-nums;
+}
+.row__name{
+  grid-area:name;
+  font-size:17px;font-weight:600;letter-spacing:.005em;
+}
+.row__score{
+  grid-area:score;
+  font:600 22px/1 var(--mono);
+  font-variant-numeric:tabular-nums;
+  color:var(--text);
+}
+.row__finds{
+  grid-area:finds;
+  margin-top:7px;
+  font-size:14px;line-height:1.62;
+  color:var(--dim);
+}
+.pts{
+  font:500 .74em/1 var(--mono);
+  color:var(--dimmer);font-weight:500;
+  margin-left:3px;vertical-align:.28em;
+  font-variant-numeric:tabular-nums;
+}
+.row--leader{
+  border-left-color:var(--amber);
+  background:linear-gradient(90deg,rgba(242,169,60,.09) 0%,transparent 72%);
+}
+.row--leader .row__pos,
+.row--leader .row__score{color:var(--amber)}
+
+/* ------------------------------------------------------------ tabellen */
+
+.tablewrap{overflow-x:auto;margin:0 0 26px;border:1px solid var(--line);border-radius:2px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th{
+  font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim);text-align:left;
+  padding:12px 14px;background:var(--slab-2);
+  border-bottom:1px solid var(--line);
+}
+td{padding:9px 14px;border-bottom:1px solid rgba(42,39,35,.6);vertical-align:top}
+tbody tr:nth-child(odd){background:var(--slab)}
+tbody tr:last-child td{border-bottom:0}
+
+body[data-page="puntenlijst"] td:nth-child(2){
+  text-align:right;width:5.5em;white-space:nowrap;
+  font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--amber);
+}
+body[data-page="puntenlijst"] td:nth-child(3){color:var(--dim);font-size:13.5px}
+body[data-page="cana"] td:nth-child(2){color:var(--dim);font-style:italic}
+body[data-page="cana"] td:nth-child(3){
+  font-family:var(--mono);font-size:13.5px;color:var(--amber);white-space:nowrap;
+}
+
+/* ------------------------------------------------------------ soortenlijst */
+
+body[data-page="all-time-ontdeklijst"] ol{
+  columns:2;column-gap:2.6rem;padding-left:1.6em;margin-bottom:26px;
+}
+body[data-page="all-time-ontdeklijst"] li{
+  break-inside:avoid;margin-bottom:8px;padding-left:2px;
+}
+body[data-page="all-time-ontdeklijst"] li::marker{
+  font-family:var(--mono);font-size:.8em;color:var(--dimmer);
+}
+
+/* ------------------------------------------------------------ spelregels */
+
+ul.punten{list-style:none;padding:0;margin:0 0 24px;max-width:44rem}
+ul.punten li{
+  display:flex;gap:14px;align-items:baseline;
+  padding:11px 16px;margin-bottom:4px;
+  background:var(--slab);border-left:2px solid var(--amber-deep);
+}
+ul.punten li strong{
+  flex:0 0 6.6rem;
+  font-family:var(--mono);font-size:14px;color:var(--amber);
+  font-variant-numeric:tabular-nums;
+}
+
+/* ------------------------------------------------------------ voet */
+
 .site-footer{
   border-top:1px solid var(--line);
-  padding:22px 20px 40px;text-align:center;
-  color:var(--ink-soft);font-size:14px;
+  padding:26px 22px 46px;text-align:center;
 }
-.site-footer p{margin:0}
+.site-footer p{
+  margin:0 auto;max-width:none;
+  font:500 11px/1.7 var(--mono);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dimmer);
+}
 
-@media (max-width:600px){
-  body{font-size:16.5px}
-  h1{font-size:25px}
-  .brand__name{font-size:22px}
-  .nav a{padding:8px 11px;font-size:14.5px}
+/* ------------------------------------------------------------ smal */
+
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .nav{
+    flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;
+    margin-left:-16px;margin-right:-16px;padding:0 16px;
+  }
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{white-space:nowrap}
+  .site__inner,.wrap{padding-left:16px;padding-right:16px}
+  .nav{gap:0 16px}
+  .row{
+    grid-template-columns:2.2rem minmax(0,1fr) auto;
+    padding:13px 4px 13px 4px;gap:0 10px;
+  }
+  .row__name{font-size:16px}
+  .row__score{font-size:19px}
+  .row__finds{font-size:13.5px}
+  body[data-page="all-time-ontdeklijst"] ol{columns:1}
+  ul.punten li{flex-direction:column;gap:2px}
+  ul.punten li strong{flex:none}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
 }

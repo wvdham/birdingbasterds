@@ -5,16 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Puntenlijst · Birding Basterds</title>
 <meta name="description" content="CDNA-soorten krijgen hun punten via de puntentoekenning en staan niet in deze lijst. Niet CDNA-soorten Soort Punten Toelichting Am. Smient 15 Am. Wita 1...">
-<link rel="stylesheet" href="../assets/style.css?v=d1066ccc">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0E0D0C">
+<link rel="stylesheet" href="../assets/style.css?v=965aa32b">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#129413;</text></svg>">
 </head>
 <body data-page="puntenlijst">
+<!--
+THESIS: een zelfontdekcompetitie is een ranglijst, dus de stand is de pagina en niet
+een alinea met namen erin. Geen blogthema, geen kaartjesraster.
+OWN-WORLD: bijna zwart, amber als enige accent, monospace voor alle cijfers en labels,
+schreefloos voor namen en lopende tekst. Rijen met een dunne lijn ertussen, de leider
+met een amberen rand. Vlak, geen schaduw, geen glans.
+STORY: de bezoeker ziet in een oogopslag wie er bovenaan staat en waarmee, en kan van
+daaruit terug in de tijd of door naar de spelregels.
+FIRST VIEWPORT: naam van de club groot en gesperd, motto eronder in amber, tabbalk,
+dan direct de stand: rangnummer, naam, puntentotaal groot rechts, vondsten eronder.
+FORM: scorebord, door Wouter gekozen uit drie richtingen.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
 <header class="site">
-  <a class="brand" href="../">
-    <span class="brand__name">Birding Basterds</span>
-    <span class="brand__motto">Find rare or die trying</span>
-  </a>
-  <nav class="nav"><a href="../">Scorelijst</a><a href="../scorelijst-archief/">Scorelijst 2023 en ouder</a><a href="../spelregels/">Spelregels</a><a href="../puntenlijst/" aria-current="page">Puntenlijst</a><a href="../all-time-ontdeklijst/">All-Time Ontdeklijst</a><a href="../cana/">CANA</a></nav>
+  <div class="site__inner">
+    <a class="brand" href="../">
+      <span class="brand__name">Birding Basterds</span>
+      <span class="brand__motto">Find rare or die trying</span>
+    </a>
+    <nav class="nav"><a href="../">Scorelijst</a><a href="../scorelijst-archief/">Scorelijst 2023 en ouder</a><a href="../spelregels/">Spelregels</a><a href="../puntenlijst/" aria-current="page">Puntenlijst</a><a href="../all-time-ontdeklijst/">All-Time Ontdeklijst</a><a href="../cana/">CANA</a></nav>
+  </div>
 </header>
 <main class="wrap">
   <h1>Puntenlijst</h1>
@@ -26,7 +43,7 @@
 <div class="tablewrap"><table><thead><tr><th>Soort</th><th>Punten</th><th>Toelichting</th></tr></thead><tbody><tr><td>Am. Smient</td><td>15</td><td></td></tr><tr><td>Am. Wita</td><td>13</td><td></td></tr><tr><td>Aziatische/Amerikaanse goudplevier</td><td>12</td><td></td></tr><tr><td>Bijeneter</td><td>3</td><td></td></tr><tr><td>Blauwstaart</td><td>15</td><td></td></tr><tr><td>Blonde ruiter</td><td>15</td><td></td></tr><tr><td>Bonapartes strandloper</td><td>13</td><td></td></tr><tr><td>Bonte kraai</td><td>6</td><td></td></tr><tr><td>Bosgors</td><td>12</td><td></td></tr><tr><td>Breedbekstrandloper</td><td>6</td><td></td></tr><tr><td>Bruine boszanger</td><td>9</td><td></td></tr><tr><td>Buidelmees</td><td>2</td><td>Op doortrek/nieuwe broedplekken</td></tr><tr><td>Citroenkwikstaart</td><td>15</td><td></td></tr><tr><td>Draaihals</td><td>1</td><td></td></tr><tr><td>Duinpieper</td><td>2</td><td></td></tr><tr><td>Dwerggans</td><td>5</td><td></td></tr><tr><td>Dwerggors</td><td>4</td><td></td></tr><tr><td>Europese Kanarie</td><td>1</td><td></td></tr><tr><td>Flamingo</td><td>6</td><td></td></tr><tr><td>Gestreepte Strandloper</td><td>5</td><td></td></tr><tr><td>Graszanger</td><td>5</td><td></td></tr><tr><td>Grauwe fitis</td><td>10</td><td></td></tr><tr><td>Grauwe Franjepoot</td><td>2</td><td></td></tr><tr><td>Grauwe Gors</td><td>6</td><td></td></tr><tr><td>Griel</td><td>15</td><td></td></tr><tr><td>Grijze wouw</td><td>9</td><td></td></tr><tr><td>Grote Burgemeester</td><td>6</td><td></td></tr><tr><td>Grote kruisbek</td><td>9</td><td></td></tr><tr><td>Grote Pieper</td><td>2</td><td></td></tr><tr><td>Hop</td><td>6</td><td></td></tr><tr><td>Humes bladkoning</td><td>13</td><td></td></tr><tr><td>IJsduiker</td><td>4</td><td></td></tr><tr><td>Kleine Alk</td><td>4</td><td></td></tr><tr><td>IJseend</td><td>1</td><td></td></tr><tr><td>Kleine Burgemeester</td><td>5</td><td></td></tr><tr><td>Kleine Vliegenvanger</td><td>6</td><td></td></tr><tr><td>Kleinst Waterhoen</td><td>10</td><td></td></tr><tr><td>Kleinste Jager</td><td>3</td><td></td></tr><tr><td>Krekelzanger</td><td>15</td><td></td></tr><tr><td>Kuifaalscholver</td><td>3 </td><td></td></tr><tr><td>Kwak</td><td>5</td><td></td></tr><tr><td>Kwartelkoning</td><td>2</td><td>Op doortrek/nieuwe broedplekken</td></tr><tr><td>Lachstern</td><td>4</td><td></td></tr><tr><td>Morinelplevier</td><td>2</td><td></td></tr><tr><td>Noordse nachtegaal</td><td>15</td><td></td></tr><tr><td>Noordse pijlstormvogel</td><td>1</td><td></td></tr><tr><td>Oehoe</td><td>6</td><td></td></tr><tr><td>Orpheusspotvogel</td><td>6</td><td></td></tr><tr><td>Ortolaan</td><td>3</td><td></td></tr><tr><td>Pallas&#8217; Boszanger</td><td>9</td><td></td></tr><tr><td>Papegaaiduiker</td><td>9</td><td></td></tr><tr><td>Pestvogel</td><td>2</td><td></td></tr><tr><td>Poelruiter</td><td>7</td><td></td></tr><tr><td>Ralreiger</td><td>15</td><td></td></tr><tr><td>Roodhalsfuut</td><td>1</td><td></td></tr><tr><td>Roodhalsgans</td><td>2</td><td></td></tr><tr><td>Roodkeelpieper</td><td>3</td><td></td></tr><tr><td>Roodkopklauwier</td><td>15</td><td></td></tr><tr><td>Roodmus</td><td>4</td><td></td></tr><tr><td>Roodpootvalk</td><td>3</td><td></td></tr><tr><td>Roodstuitzwaluw</td><td>8</td><td></td></tr><tr><td>Rosse Franjepoot</td><td>2</td><td></td></tr><tr><td>Roze Spreeuw</td><td>8</td><td></td></tr><tr><td>Ruigpootbuizerd</td><td>3</td><td></td></tr><tr><td>Siberische boompieper</td><td>3</td><td></td></tr><tr><td>Slangenarend</td><td>8</td><td></td></tr><tr><td>Sneeuwgans</td><td>7</td><td></td></tr><tr><td>Sperwergrasmus</td><td>3</td><td></td></tr><tr><td>Steppekiekendief</td><td>2</td><td></td></tr><tr><td>Stormvogeltje</td><td>12</td><td></td></tr><tr><td>Struikrietzanger</td><td>10</td><td></td></tr><tr><td>Taigaboomkruiper</td><td>3</td><td></td></tr><tr><td>Taigarietgans</td><td>12</td><td></td></tr><tr><td>Terekruiter</td><td>12</td><td></td></tr><tr><td>Vaal stormvogeltje</td><td>1</td><td></td></tr><tr><td>Vale gier</td><td>15</td><td></td></tr><tr><td>Vale gierzwaluw</td><td>10</td><td></td></tr><tr><td>Vale Pijlstormvogel</td><td>10</td><td></td></tr><tr><td>Vorkstaartmeeuw</td><td>4</td><td></td></tr><tr><td>Waterrietzanger</td><td>6</td><td></td></tr><tr><td>Waterspreeuw</td><td>15</td><td></td></tr><tr><td>Witoogeend</td><td>4</td><td></td></tr><tr><td>Witstuitbarmsijs</td><td>15</td><td></td></tr><tr><td>Witvleugelstern</td><td>3</td><td></td></tr><tr><td>Witwangstern</td><td>3</td><td></td></tr><tr><td>Woudaap</td><td>7</td><td>Nieuwe territoria vergeleken met jaar ervoor</td></tr><tr><td>Zwarte Ibis</td><td>6</td><td></td></tr><tr><td>Zwarte Ooievaar</td><td>2</td><td></td></tr><tr><td>Zwarte Zeekoet</td><td>10</td><td></td></tr></tbody></table></div>
 </main>
 <footer class="site-footer">
-  <p>Birding Basterds &middot; deelname aan de competitie kan alleen op uitnodiging</p>
+  <p>Deelname aan de competitie kan alleen op uitnodiging</p>
 </footer>
 </body>
 </html>
