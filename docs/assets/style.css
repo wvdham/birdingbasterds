@@ -173,6 +173,18 @@ body[data-page="puntenlijst"] td:nth-child(2){
   font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--amber);
 }
 body[data-page="puntenlijst"] td:nth-child(3){color:var(--dim);font-size:13.5px}
+body[data-page="spelregels"] .tablewrap{max-width:26rem}
+body[data-page="spelregels"] td:nth-child(2){
+  text-align:right;width:7em;white-space:nowrap;
+  font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--amber);
+}
+body[data-page="spelregels"] td:first-child{font-family:var(--mono);font-size:13.5px}
+.formule{
+  display:inline-block;
+  margin:0 0 20px;padding:11px 16px;
+  background:var(--slab);border-left:2px solid var(--amber);
+  font:500 13.5px/1.5 var(--mono);color:var(--text);
+}
 body[data-page="cana"] td:nth-child(2){color:var(--dim);font-style:italic}
 body[data-page="cana"] td:nth-child(3){
   font-family:var(--mono);font-size:13.5px;color:var(--amber);white-space:nowrap;

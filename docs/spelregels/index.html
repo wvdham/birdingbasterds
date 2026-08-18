@@ -7,7 +7,7 @@
 <meta name="description" content="Hieronder vind je de spelregels van de Birding Basterds zelfontdekcompetities. Puntentoekenning Dit zijn de indicaties voor punten, er is individuele sp...">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0E0D0C">
-<link rel="stylesheet" href="../assets/style.css?v=965aa32b">
+<link rel="stylesheet" href="../assets/style.css?v=6df13ece">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#129413;</text></svg>">
 </head>
 <body data-page="spelregels">
@@ -42,19 +42,46 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 <p>Dit zijn de <i>indicaties</i> voor punten, er is individuele speelruimte waarmee we rekening houden met aantal (twitchbare) gevallen, influxen, individuele verschillen etc.</p>
 
-<ul class="punten">
-<li><strong>100 punten</strong> nieuwe soort voor NLD (CDNA-beoordeelsoort)</li>
-<li><strong>90 punten</strong> 2e geval (CDNA-beoordeelsoort)</li>
-<li><strong>80 punten</strong> 5e geval (CDNA-beoordeelsoort)</li>
-<li><strong>30 punten</strong> &lt;20 gevallen (CDNA-beoordeelsoort)</li>
-<li><strong>20 punten</strong> &lt;40 gevallen (CDNA-beoordeelsoort)</li>
-<li><strong>16 punten</strong> de algemeenste CDNA-beoordeelsoorten</li>
-<li><strong>1 t/m 15</strong> Alles tussen een Roodhalsgans (1 punt) en een Amerikaanse smient (15 punten)</li>
-</ul>
+<h3>Aantal gevallen</h3>
 
-<p>De soorten in de categorie 1 t/m 15 staan met hun puntenaantal op de <a href="../puntenlijst/">puntenlijst</a>.</p>
+<p>Bepaal het aantal gevallen voor Nederland, inclusief gevallen waarvan we weten dat ze aanvaard worden. Dat aantal bepaalt de basispunten.</p>
 
-<p>Omdat sommige soorten inflatiesoorten zijn (ze zijn relatief veel algemener dan vroeger) en sommige soorten juist zeldzamer zijn geworden, krijgen sommige soorten meer punten dan het aantal gevallen normaal zou rechtvaardigen en andere soorten juist minder punten. Dit wordt bepaald aan de hand van de verhouding gevallen na 2000 en gevallen voor 2000 (zie dutchavifauna.nl). Dit wordt alleen toegepast op soorten met meer dan 5 gevallen. Op deze manier krijgt een Kleine trap bijvoorbeeld relatief veel punten en een vale gierzwaluw minder.</p>
+<div class="tablewrap"><table><thead><tr><th>Aantal gevallen</th><th>Punten</th></tr></thead><tbody>
+<tr><td>1e NL</td><td>100</td></tr>
+<tr><td>2e</td><td>90</td></tr>
+<tr><td>5e</td><td>80</td></tr>
+<tr><td>10e</td><td>70</td></tr>
+<tr><td>20e</td><td>50</td></tr>
+<tr><td>30e</td><td>40</td></tr>
+<tr><td>50e</td><td>25</td></tr>
+<tr><td>60e</td><td>20</td></tr>
+<tr><td>60+</td><td>16</td></tr>
+</tbody></table></div>
+
+<h3>Correctie</h3>
+
+<p>Sommige soorten zijn relatief veel algemener dan vroeger en andere juist zeldzamer geworden. Daarvoor gaan er punten bij of af, aan de hand van de correctiefactor:</p>
+
+<p class="formule">correctiefactor = gevallen na 2000 / totaal aantal gevallen</p>
+
+<div class="tablewrap"><table><thead><tr><th>Factor</th><th>Correctie</th></tr></thead><tbody>
+<tr><td>&lt;0,1</td><td>+25</td></tr>
+<tr><td>0,1 - 0,15</td><td>+20</td></tr>
+<tr><td>0,15 - 0,2</td><td>+15</td></tr>
+<tr><td>0,2 - 0,3</td><td>+10</td></tr>
+<tr><td>0,3 - 0,4</td><td>+5</td></tr>
+<tr><td>0,4 - 0,6</td><td>0</td></tr>
+<tr><td>0,6 - 0,7</td><td>-5</td></tr>
+<tr><td>0,7 - 0,8</td><td>-10</td></tr>
+<tr><td>0,8 - 0,9</td><td>-15</td></tr>
+<tr><td>0,9 - 1,0</td><td>-20</td></tr>
+</tbody></table></div>
+
+<p>Een correctie omhoog gaat tot maximaal 85 punten, een correctie omlaag tot minimaal 16 punten.</p>
+
+<h3>Niet CDNA-soorten</h3>
+
+<p>Alles tussen een Roodhalsgans (1 punt) en een Amerikaanse smient (15 punten). Die soorten staan met hun puntenaantal op de <a href="../puntenlijst/">puntenlijst</a>.</p>
 
 <p>Voor ontdekkingen van soorten uit de laagste puntencategorieën 1 t/m 5 krijg je per dag maar één keer de punten, zodat een plotselinge draaihalzenfall op de 2e maasvlakte je niet 10 punten op kan leveren. Dit geldt ook voor alle zeevogelsoorten (Stormvogeltje, Zwarte zeekoet, etc.).</p>
 
