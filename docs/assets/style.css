@@ -1,17 +1,19 @@
 /* Birding Basterds - scorebord */
 
 :root{
-  --bg:#0E0D0C;
-  --row:#16151300;
-  --slab:#161513;
-  --slab-2:#1B1A17;
-  --line:#2A2723;
-  --text:#EBE6DB;
-  --dim:#A29A8E;
-  --dimmer:#8B8479;
-  --amber:#F2A93C;
-  --amber-soft:#F8CE85;
-  --amber-deep:#7E5A1B;
+  --bg:#F7F4ED;              /* papier */
+  --slab:#FFFDF8;            /* rijen en tabellen */
+  --slab-2:#F0EBE0;          /* koprij */
+  --line:#E0D9CB;
+  --text:#1B1A17;
+  --dim:#5F5951;
+  --dimmer:#7C766C;
+  --amber:#8A5710;           /* accent op licht: oker */
+  --amber-soft:#7A4E0E;
+  --amber-deep:#D9B36A;
+  --kop:#141310;             /* de donkere band bovenaan */
+  --kop-text:#F2EFE7;
+  --kop-amber:#F2A93C;
   --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
@@ -30,8 +32,8 @@ body{
 /* ------------------------------------------------------------ kop */
 
 .site{
-  border-bottom:1px solid var(--line);
-  background:linear-gradient(180deg,#131210 0%,var(--bg) 100%);
+  background:var(--kop);
+  color:var(--kop-text);
 }
 .site__inner{max-width:56rem;margin:0 auto;padding:30px 22px 0}
 .brand{display:block;text-decoration:none;color:inherit}
@@ -39,13 +41,13 @@ body{
   display:block;
   font:700 clamp(26px,5.2vw,40px)/1 var(--sans);
   letter-spacing:.14em;text-transform:uppercase;
-  color:var(--text);
+  color:var(--kop-text);
 }
 .brand__motto{
   display:block;margin-top:12px;
   font:500 11.5px/1 var(--mono);
   letter-spacing:.26em;text-transform:uppercase;
-  color:var(--amber);
+  color:var(--kop-amber);
 }
 .nav{display:flex;flex-wrap:wrap;gap:0 22px;margin-top:26px}
 .nav a{
@@ -57,8 +59,9 @@ body{
   border-bottom:2px solid transparent;
   transition:color .15s ease;
 }
-.nav a:hover{color:var(--text)}
-.nav a[aria-current="page"]{color:var(--amber);border-bottom-color:var(--amber)}
+.nav a{color:#A9A196}
+.nav a:hover{color:var(--kop-text)}
+.nav a[aria-current="page"]{color:var(--kop-amber);border-bottom-color:var(--kop-amber)}
 
 /* ------------------------------------------------------------ romp */
 
@@ -102,7 +105,7 @@ main strong{color:var(--amber);font-weight:600}
   background:var(--slab);
   transition:color .15s ease,border-color .15s ease;
 }
-.years a:hover{color:var(--amber);border-color:var(--amber-deep)}
+.years a:hover{color:var(--amber);border-color:var(--amber)}
 
 /* ------------------------------------------------------------ scorebord */
 
@@ -116,7 +119,7 @@ main strong{color:var(--amber);font-weight:600}
   padding:15px 18px 15px 6px;
   border-bottom:1px solid var(--line);
   border-left:2px solid transparent;
-  background:linear-gradient(90deg,var(--slab) 0%,transparent 78%);
+  background:var(--slab);
 }
 .row:first-child{border-top:1px solid var(--line)}
 .row__pos{
@@ -149,7 +152,7 @@ main strong{color:var(--amber);font-weight:600}
 }
 .row--leader{
   border-left-color:var(--amber);
-  background:linear-gradient(90deg,rgba(242,169,60,.09) 0%,transparent 72%);
+  background:linear-gradient(90deg,rgba(242,169,60,.16) 0%,var(--slab) 70%);
 }
 .row--leader .row__pos,
 .row--leader .row__score{color:var(--amber)}
@@ -164,8 +167,9 @@ th{
   padding:12px 14px;background:var(--slab-2);
   border-bottom:1px solid var(--line);
 }
-td{padding:9px 14px;border-bottom:1px solid rgba(42,39,35,.6);vertical-align:top}
+td{padding:9px 14px;border-bottom:1px solid var(--line);vertical-align:top}
 tbody tr:nth-child(odd){background:var(--slab)}
+tbody tr:nth-child(even){background:var(--bg)}
 tbody tr:last-child td{border-bottom:0}
 
 body[data-page="puntenlijst"] td:nth-child(2){
@@ -182,7 +186,7 @@ body[data-page="spelregels"] td:first-child{font-family:var(--mono);font-size:13
 .formule{
   display:inline-block;
   margin:0 0 20px;padding:11px 16px;
-  background:var(--slab);border-left:2px solid var(--amber);
+  background:var(--slab-2);border-left:2px solid var(--amber);
   font:500 13.5px/1.5 var(--mono);color:var(--text);
 }
 body[data-page="cana"] td:nth-child(2){color:var(--dim);font-style:italic}
@@ -209,6 +213,8 @@ ul.punten li{
   display:flex;gap:14px;align-items:baseline;
   padding:11px 16px;margin-bottom:4px;
   background:var(--slab);border-left:2px solid var(--amber-deep);
+  border-top:1px solid var(--line);border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
 }
 ul.punten li strong{
   flex:0 0 6.6rem;
